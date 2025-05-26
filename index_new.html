@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartDay - Advanced Day Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header d-flex flex-column align-items-center">
+
+  <div class="calendar-icon mb-2 d-sm-none">
+    <i class="fas fa-calendar-check fa-2x"></i>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center w-100">
+    <h1 class="site-title m-0 text-center text-sm-start flex-grow-1">
+      <span class="d-none d-sm-inline">
+        <i class="fas fa-calendar-check me-2"></i>
+      </span>
+      SmartDay - Smart Planning for a Smarter You
+    </h1>
+
+    <button class="toggle-theme ms-3" onclick="toggleTheme()">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+  </div>
+</header>
+
+
+
+  <div class="container-main">
+    <div class="text-center mb-4">
+      <div id="live-clock" class="clock-display"></div>
+      <h3 id="today-date"></h3>
+    </div>
+    
+
+    <div id="planner"></div>
+
+    <div class="notes-section mt-5">
+      <h4 class="section-title">📝 Quick Notes</h4>
+      <textarea id="quick-notes" placeholder="Write anything here..."></textarea>
+      <button class="btn btn-primary mt-2" onclick="saveNotes()">Save Notes</button>
+      <div id="notes-history"></div>
+    </div>
+
+   <div class="tasks-section mt-5">
+  <h4 class="section-title">✅ To-Do List</h4>
+
+  
+  <div id="todo-container"></div>
+
+  <div class="d-flex mt-5 align-items-center flex-wrap" style="gap: 10px;">
+    <input type="text" class="form-control me-2" id="todo-input" placeholder="Add new task..." style="flex: 1 1 250px;" />
+    <input type="datetime-local" class="form-control me-2" id="todo-timeline" />
+    <select id="recurrence-select" class="form-select me-2" style="max-width: 150px;">
+      <option value="none" selected>No Repeat</option>
+      <option value="daily">Daily</option>
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+    </select>
+    <button class="btn btn-success" onclick="addTodo()">Add</button>
+    <button class="btn btn-warning ms-2" onclick="clearTodoList()">Clear All</button>
+  </div>
+</div>
+</div>
+
+<footer class="footer mt-5 py-4 text-center text-white">
+  <p class="mb-1">SmartDay © 2025 | Plan well, live well, succeed always.</p>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/narendra-sharma-124226338?" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/narendra222003/" class="text-white"><i class="fab fa-github"></i></a>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
